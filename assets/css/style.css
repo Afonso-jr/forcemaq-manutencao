@@ -1,0 +1,158 @@
+/* ============================================= Geral ============================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --h1-title-color: rgba(248, 248, 255, 1);
+    --h2-title-color: red;
+    --p-paragraph-color: rgba(248, 248, 255, 1);
+    --backgroud-color-white: rgb(255, 255, 255);
+    --backgroud-color-alternatiev-white: black;
+
+    --nav-height: 10rem;
+
+    font-size: 62.5%; /* 1 rem = 10px*/
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--backgroud-color-alternatiev-white);
+}
+
+body {    
+    font-family: 'DM Sans';
+    font-size: 1.4rem;
+    text-align: center;  
+    height: 100vh;
+    width: 100%;
+}
+
+.wrapper {
+    width: min(35rem, 100%);   
+    margin-inline: auto;         
+    overflow: overlay;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 5rem; 
+    color: var(--h1-title-color);
+}
+
+h2 {
+    padding-top: 2rem;
+    font-size: 3rem; 
+    color: var(--h2-title-color);
+}
+
+p {
+    font-size: 2.2rem; 
+    color: var(--p-paragraph-color);
+}
+
+.logo img {
+    width: 20rem;
+    object-fit: contain;
+}
+
+.carregando {
+    padding: 5rem 0rem 1rem 0rem
+}
+
+.insta svg {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.progressbar {
+    width: 90%;
+    height: 1.2rem;
+    background-color: #d1d1d1;
+    margin: auto;
+    margin-bottom: 10rem;
+    opacity: .8;
+    position: relative;
+}
+
+.progressbar::before {
+    content: "0%";
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    bottom: -1.8rem;
+    color: white;
+}
+
+.progressbar::after {
+    content: "100%";
+    position: absolute;
+    right: 0;
+    font-size: 1.2rem;
+    bottom: -1.8rem;
+    color: white;
+}
+
+.progressbar span {
+    display: block;
+    width: 90%;
+    height: 1.2rem;
+    background-color: red;
+    animation: fill 2s ease-in infinite;
+}
+
+@keyframes fill {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 90%;
+    }
+}
+
+
+
+
+/* ================================================== Responsivo ================================================== */ 
+
+
+@media (max-width: 1024px) {
+    ::-webkit-scrollbar{
+        width: 0px; 
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* =================== Geral =================== */ 
+
+    .wrapper {
+        width: min(150rem, 95%);
+        display: grid;
+    }
+
+    .logo img {
+        width: 70rem;
+        object-fit: contain;
+    }
+
+    h1 {
+        font-size: 8rem; 
+        color: var(--h1-title-color);     
+    }
+
+    .progressbar {
+        width: 36rem;
+        height: 1.2rem;
+        background-color: #d1d1d1;
+        margin: auto;
+        margin-bottom: 10rem;
+        opacity: .8;
+        position: relative;
+    }
+    
+}
